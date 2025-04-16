@@ -1,19 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/text_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="請輸入玩家姓名已開始遊戲"
+        android:textSize="20sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/playerName"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="請輸入玩家姓名" />
+
+    <TextView
+        android:id="@+id/Text_chosse"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="請選擇出拳"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/R">
+
+
+        <RadioButton
+            android:id="@+id/s"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="剪刀" />
+
+        <RadioButton
+            android:id="@+id/rook"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="石頭" />
+
+        <RadioButton
+            android:id="@+id/paper"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="布" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button_play"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="猜拳"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="名字"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/playerChoose"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="我方猜拳"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/pcChoose"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="電腦猜拳"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/winner"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="勝利者"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="戰績:0勝0敗0平勝率:0%"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="重置計數"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="對戰歷史紀錄"
+        android:textSize="20sp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/List"/>
+</LinearLayout>
