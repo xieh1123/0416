@@ -45,12 +45,7 @@ class MainActivity : AppCompatActivity() {
         val listview = findViewById<ListView>(R.id.List)
         var array = ArrayList<String>()
         total.text = "戰績\n" + " 勝:$win 敗:$lose 平:$nowin"
-        result.setOnClickListener {
-            var win = 0
-            var lose = 0
-            var nowin = 0
-            total.text = "戰績\n" + " 勝:$win 敗:$lose 平:$nowin"
-        }
+
         var log = 10
         Log.d("Activity", "已觸發顯示log")
         Log.d("Activity", log.toString())
@@ -132,7 +127,8 @@ class MainActivity : AppCompatActivity() {
                     .show()
 
             }
-            var win_time = (win / (win + lose)).toFloat()*100
+            var win_time = win / (win + lose).toFloat()
+            win_time=win_time*100
             total.text = "勝:$win 敗:$lose 平:$nowin\n勝率$win_time %"
             Name.text = "名字:$Player_name"
             player_choose.text = "我方猜:$playChoice"
@@ -146,6 +142,13 @@ class MainActivity : AppCompatActivity() {
             listview.adapter = adapter
 
 
+
+        }
+        result.setOnClickListener {
+            win = 0
+            lose = 0
+            nowin = 0
+            total.text = "戰績\n" + " 勝:$win 敗:$lose 平:$nowin"
         }
     }
 }
